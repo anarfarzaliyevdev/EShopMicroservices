@@ -12,6 +12,14 @@
         Guid Id
     );
 
+    public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
+    {
+        public CreateProductCommandValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Product name is required.");
+        }
+    }
+
     internal class CreateProductCommandHandler(IDocumentSession session) : 
                    ICommandHandler<CreateProductCommand, CreateProductResult>
     {
