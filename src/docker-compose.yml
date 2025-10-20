@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: Services/Basket/Basket.API/Dockerfile
 
-  dicount.grpc:
+  discount.grpc:
     image: ${DOCKER_REGISTRY-}dicountgrpc
     build:
       context: .
